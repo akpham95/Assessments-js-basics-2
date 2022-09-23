@@ -187,7 +187,7 @@ console.log(filteredFood)
 
     Use the filter method to filter the foodArr
 
-        In the callback, check if the `type` is `above`, 
+        In the callback, check if the `type` is `above`,  // above means >     below means <
         if it is, return objects whose value for the given
         property is greater than the `number` passed in
 
@@ -197,20 +197,35 @@ console.log(filteredFood)
     
     Return the filtered array from the entire function
 */
-
-function filterByProperty(property, number, type ) {
+//                       popularity   5   above
+let filterByProperty =  (property, number, type ) => {
     
-    return filteredArray = foodArr.filter((popularity) => popularity > 5)
+    let filteredArray =[];
+    // price is below 10 dollars
+    // foodArray.property < number 
+    if (type === "above"){
+       filteredArray = foodArr.filter((foodObj)=>foodObj[property] > number)
+    }else{
+        filteredArray = foodArr.filter((foodObj)=>foodObj[property] > number)
+    }
+    return filteredArray;
     
 }
     // not sure how to do use callback function to check if its above or below.
     
 
 
-console.log(filterByProperty('popularity', 5, type))
+console.log(filterByProperty('popularity', 5, "above"))
 
 
-//
+/*  {                                       //foodObj
+        name: "popcorn",
+        price: 1,
+        category: "snack",
+        popularity: 7,
+        tags: ["kids", "gluten-free"],
+    },
+*/
 
 /*
     Invoke the `filterByProperty` function passing
