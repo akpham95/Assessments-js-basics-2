@@ -33,9 +33,10 @@ const cart = [
     }
 ]
 
-//CODE HERE
 
-// const summedPrice = cart.reduce(/* CALLBACK HERE */)
+
+const summedPrice = cart.reduce((acc,curr) => acc + curr.price,0)
+console.log(summedPrice)
 
 
 //////////////////PROBLEM 2////////////////////
@@ -53,7 +54,12 @@ const cart = [
     decimals, for example: .06 for a 6% tax.
 */
 
-//CODE HERE
+function calcFinalPrice (cartTotal, couponValue, tax){
+    let grandTotal = (cartTotal - couponValue) * 1.06
+    return grandTotal
+}
+
+console.log(calcFinalPrice(10, 5, 0.06))
 
 
 
@@ -78,13 +84,25 @@ const cart = [
 */
 
 /*
-    TEXT ANSWER HERE
+   
+Customer object - some things a restauraunt would need to know about their customer.
+1. name
+2. phone number
+3. email address for promotions
+4. house address for deliveries
 
 */
+
+
 
 /*
     Now, create a customer object following your own
     guidelines.
 */
 
-//CODE HERE
+let customer = {
+    name: "Anthony",
+    phone: "281-713-832",
+    email: "akpham95@gmail.com",
+    address: "1234 Dev street",
+}
