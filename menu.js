@@ -30,7 +30,14 @@
     'kids'
 */
 
-//CODE HERE
+let pizza = {
+    name: "pizza",
+    price: 1.50,
+    category: "entree",
+    popularity: 10,
+    tags: ["kids", "gluten-free"],
+}
+
 
 
 
@@ -42,7 +49,7 @@
     Use dot notation to access the value.
 */
 
-//CODE HERE
+console.log(pizza.popularity)
 
 
 /*
@@ -52,7 +59,9 @@
     get the value.
 */
 
-//CODE HERE
+console.log(pizza.tags[1])
+
+
 
 
 /*
@@ -62,7 +71,8 @@
     Print the value of your new price variable.
 */
 
-//CODE HERE
+let {price}  = pizza
+console.log(price)
 
 
 /*
@@ -72,7 +82,8 @@
     Print the value of your category variable. 
 */
 
-//CODE HERE
+let {category} = pizza
+console.log(category)
 
 
 //////////////////PROBLEM 3////////////////////
@@ -87,7 +98,45 @@
     data in some functions that you'll write.
 */
 
-//CODE HERE
+let foodArr = [
+    { 
+    name: "pizza",
+    price: 1.50,
+    category: "entree",
+    popularity: 10,
+    tags: ["kids", "gluten"],
+    },
+
+    {name: "hotdog",
+    price: 1.50,
+    category: "entree",
+    popularity: 8,
+    tags: ["kids", "gluten"],
+    },
+    { 
+    name: "salad",
+    price: 2.50,
+    category: "appetizer",
+    popularity: 5,
+    tags: ["adults", "gluten-free"],
+    },
+
+    {name: "taco",
+    price: 2,
+    category: "entree",
+    popularity: 9,
+    tags: ["adults", "gluten"],
+    },
+
+    { 
+    name: "popcorn",
+    price: 1,
+    category: "snack",
+    popularity: 7,
+    tags: ["kids", "gluten-free"],
+    },
+
+]
 
 
 
@@ -103,9 +152,10 @@
     your food objects has.
 */
 
-//CODE HERE
 
-// const filteredFood = foodArr.filter(/* CALLBACK HERE */)
+
+const filteredFood = foodArr.filter(elem_val => elem_val.tags.includes('kids'))
+console.log(filteredFood)
 
 
 
@@ -148,8 +198,19 @@
     Return the filtered array from the entire function
 */
 
-//CODE HERE
+function filterByProperty(property, number, type ) {
+    
+    return filteredArray = foodArr.filter((popularity) => popularity > 5)
+    
+}
+    // not sure how to do use callback function to check if its above or below.
+    
 
+
+console.log(filterByProperty('popularity', 5, type))
+
+
+//
 
 /*
     Invoke the `filterByProperty` function passing
@@ -158,4 +219,3 @@
     You'll have to console.log to see the filtered array
 */
 
-//CODE HERE
