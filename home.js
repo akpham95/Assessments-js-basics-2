@@ -50,7 +50,14 @@ greetUser('Andrew')
 const deliveryAreaZipCodes = [85205, 85204, 85203, 85213, 85206]
 
 function canWeDeliver(zipCode) {
-    if 
+    if (deliveryAreaZipCodes.includes(zipCode)){
+        return "You're in our delivery zone!"
+    }else{
+        return "Sorry, we can't deliver to that address"
+    }
+}
+console.log(canWeDeliver(84606))
+console.log(canWeDeliver(85205))
 
 
 
@@ -71,7 +78,18 @@ function canWeDeliver(zipCode) {
     Name your new function `canWeDeliverTwo`.
 */
 
-// CODE HERE
+function canWeDeliverTwo (zipCode){
+    for (let i=0; i < deliveryAreaZipCodes.length; i++){
+        if (zipCode === deliveryAreaZipCodes[i]){
+            return "You're in our delivery zone!"
+        }else{
+            return "Sorry, we can't deliver to that address"
+        }
+    }
+}
+console.log("====================")
+console.log(canWeDeliverTwo(84606))
+console.log(canWeDeliver(85205))
 
 
 //////////////////PROBLEM 3////////////////////
@@ -86,7 +104,7 @@ function canWeDeliver(zipCode) {
 
     Read on for more instructions.
 */
-
+// array of object deals
 const deals = [
     {
         title: '15% Off!', 
@@ -107,8 +125,7 @@ const deals = [
     to replace the 15 with a 10.
 */
 
-//CODE HERE
-
+console.log(deals[0].title.replace('15','10'))
 
 
 /*
@@ -124,4 +141,4 @@ const deals = [
     to be displaying wrong on the live site.
 */
 
-//CODE HERE
+console.log(deals[1].desc.replace(/\s+/g, ' ').trim().replace('March','April'))
